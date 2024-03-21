@@ -34,34 +34,17 @@ function barChart(data,columnInUse, fillColor){
     .on("mouseout",function(e,d){
         d3.select(this).attr("fill",fillColor)
  
-        svg.selectAll(".tooltip".remove())
+        svg.selectAll(".tooltip").remove()
     })
 
-    svg.append("text")
-    .text(d[columnInUse])
-    .attr("class","tooltip")
-    .attr("x",x)
-    .attr("y",y)
+    
 
-    .on("mouseout",function(e,d){
-        d3.selectAll(".tooltip").remove()
-    })
-
-
-    svg.append("text")
-        .text(d[columnInUse])
-        .attr("class","tooltip")
-        .attr("x",x)
-        .attr("y",y-5)
-        .attr("font-size","24px")
-        .attr("fill","red")
-
-
-
+  
     
 }
 
 barChart(set1,"y","blue")
+
 
 
 
